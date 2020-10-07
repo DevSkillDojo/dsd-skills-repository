@@ -13,18 +13,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   // If the node being create is an MDX file, add some additional fields to the node
+  // The slug
+  // The source
+  //   - The source directory name as a node field so that we can use it for filtering later
+  //   - The source directory is the immediate child of "src" where the MDX file was found
   if (node.internal.type === "Mdx") {
     console.log("Creating MDX node")
-    // Create a slug for the node and store the slug value as a node field
-    const slug = createFilePath({ node, getNode, basePath: "blog-posts" })
-    createNodeField({
-      node,
-      name: "slug",
-      value: slug,
-    })
 
-    // Store the source directory name as a node field so that we can use it for filtering later
-    // The source directory is the immediate child of "src" where the MDX file was found
     let indexStart = node.fileAbsolutePath.indexOf("/src/")
     const tail = node.fileAbsolutePath.substring(
       indexStart + 5,
@@ -37,7 +32,21 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         name: "source",
         value: source,
       })
+
+      let prefix = ""
+      if (source === "blog-posts") {
+        prefix = "blog"
+      } else if (source === "skills-repository") {
+        prefix = "skills"
+      }
+      const slugVal = createFilePath({ node, getNode })
+      createNodeField({
+        node,
+        name: "slug",
+        value: prefix + slugVal,
+      })
     }
+
     // console.log(node);
     // console.log("Tail: "+tail);
     // console.log("Source: "+source);
@@ -52,6 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allMdx {
         edges {
           node {
+            id
             fields {
               slug
               source
@@ -62,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  console.log(result);
+  console.log(result)
 
   // Loop over all MDX pages and create blog or skill pages (depending on source)
   result.data.allMdx.edges.forEach((edge, index) => {
@@ -70,9 +80,10 @@ exports.createPages = async ({ graphql, actions }) => {
     if (edge.node.fields.source === "blog-posts") {
       console.log("Creating blog post page: " + edge.node.fields.slug)
       createPage({
-        path: `blog-posts${edge.node.fields.slug}`,
+        path: edge.node.fields.slug,
         component: PostTemplate,
         context: {
+          id: edge.node.id,
           slug: edge.node.fields.slug,
         },
       })
@@ -80,14 +91,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Create Skill Pages
     if (edge.node.fields.source === "skills-repository") {
-        console.log("Creating skill page: " + edge.node.fields.slug)
-        createPage({
-            path: `skills-repository${edge.node.fields.slug}`,
-            component: SkillTemplate,
-            context: {
-              slug: edge.node.fields.slug,
-            },
-          })
-      }
+      console.log("Creating skill page: " + edge.node.fields.slug)
+      createPage({
+        path: edge.node.fields.slug,
+        component: SkillTemplate,
+        context: {
+          id: edge.node.id,
+          slug: edge.node.fields.slug,
+        },
+      })
+    }
   })
 }

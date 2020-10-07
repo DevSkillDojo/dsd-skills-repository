@@ -34,11 +34,13 @@ const Blog = () => {
       <ul>
         {data.allMdx.edges.map( (edge, index) => {
           return (
-            <li key={edge.id}>
-            <p>{edge.node.frontmatter.title}</p>
-            <p>{edge.node.frontmatter.date}</p>
-            <p>{edge.node.excerpt}</p>
-          </li>
+            <Link to={`/${edge.node.fields.slug}`} key={index}>
+              <li >
+                <p>{edge.node.frontmatter.title}</p>
+                <p>{edge.node.frontmatter.date}</p>
+                <p>{edge.node.excerpt}</p>
+              </li>
+            </Link>
           )
         })}
       </ul>
