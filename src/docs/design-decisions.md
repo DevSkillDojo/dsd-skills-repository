@@ -7,4 +7,4 @@ The intention is to use Markdown files to contain the content for all skills. Th
 
 - Plugins
   - gatsby-transformer-remark for transforming markdown to HTML
-  - gatsby-remark-source-name so that we can filter by the source of a markdown file (To distinguish between blog and skill pages)
+  - gatsby-plugin-mdx (So that we can write in MDX, instead of raw markdown)

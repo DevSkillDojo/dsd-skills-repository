@@ -6,26 +6,24 @@ import SEO from "../components/seo"
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
-    query BlogPostsListQuery {
-      allMarkdownRemark(
-        filter: { fields: { sourceName: { eq: "blog-posts" } } }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              sourceName
-            }
-            frontmatter {
-              title
-              date(formatString: "YYYY-MM-DD")
-            }
-            excerpt(pruneLength: 100)
+  query BlogPostsListQuery {
+    allMdx(filter: {fields: {source: {eq: "blog-posts"}}}) {
+      edges {
+        node {
+          id
+          fields {
+            slug
           }
+          frontmatter {
+            title
+            date(formatString: "YYYY-MM-DD")
+          }
+          excerpt(pruneLength: 100)
         }
-        totalCount
       }
+      totalCount
     }
+  }
   `)
 
   return (
@@ -34,7 +32,7 @@ const Blog = () => {
       <h1>Blog</h1>
       <p>Welcome to the DevSkillDojo blog</p>
       <ul>
-        {data.allMarkdownRemark.edges.map( (edge, index) => {
+        {data.allMdx.edges.map( (edge, index) => {
           return (
             <li key={edge.id}>
             <p>{edge.node.frontmatter.title}</p>

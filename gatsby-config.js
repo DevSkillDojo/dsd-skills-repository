@@ -21,6 +21,7 @@ module.exports = {
         path: `${__dirname}/src/blog-posts`,
       },
     },
+    `gatsby-plugin-mdx`,
     `gatsby-remark-source-name`,
     {
       resolve: `gatsby-source-filesystem`,
