@@ -7,4 +7,9 @@ The intention is to use Markdown files to contain the content for all skills. Th
 
 - Plugins
   - gatsby-transformer-remark for transforming markdown to HTML
-  - gatsby-plugin-mdx (So that we can write in MDX, instead of raw markdown)
+  - gatsby-plugin-mdx (So that we can write in MDX, instead of plain markdown)
+  - react-bootstrap for styling
+  - bootstrap (Because it provides the CSS for react-bootstrap)
+  - gatsby-plugin-sass (So that we can do Sass processing)
+  - node-sass (Because it is a dependency for gatsby-plugin-sass)
+  - react-icons (For easy access to a variety of icons)

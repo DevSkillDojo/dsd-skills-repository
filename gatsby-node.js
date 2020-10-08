@@ -37,7 +37,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       if (source === "blog-posts") {
         prefix = "blog"
       } else if (source === "skills-repository") {
-        prefix = "skills"
+        prefix = "repository"
       }
       const slugVal = createFilePath({ node, getNode })
       createNodeField({

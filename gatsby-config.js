@@ -5,6 +5,7 @@ module.exports = {
     author: `@devskilldojo`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -22,7 +23,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
-    `gatsby-remark-source-name`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
