@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from "../components/layout"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import SubscribeWidget from "../components/subscribeWidget"
 
 const shortcodes = { Link } // Provide list of components that should be made available to MDX files here
 
@@ -10,10 +11,12 @@ const PostTemplate = props => {
   console.log("Blog Post Template props: ", props)
   return (
     <Layout>
-      {/* <h1>Blog Post - {props.data.mdx.frontmatter.title}</h1> */}
+      <h1>{props.data.mdx.frontmatter.title}</h1>
       <MDXProvider components={shortcodes}>
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
       </MDXProvider>
+      <p>Subscribe to our newsletter to make sure you don't miss anything</p>
+      <SubscribeWidget />
     </Layout>
   )
 }
