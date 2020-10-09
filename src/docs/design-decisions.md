@@ -13,3 +13,4 @@ The intention is to use Markdown files to contain the content for all skills. Th
   - gatsby-plugin-sass (So that we can do Sass processing)
   - node-sass (Because it is a dependency for gatsby-plugin-sass)
   - react-icons (For easy access to a variety of icons)
+  - gatsby-theme-blog (For handling the blog side of things - This is an official plugin)

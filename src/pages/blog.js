@@ -1,49 +1,65 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-
+import { generateCustomPlaceholderURL } from "react-placeholder-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Row, Card, Col } from "react-bootstrap"
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
-  query BlogPostsListQuery {
-    allMdx(filter: {fields: {source: {eq: "blog-posts"}}}) {
-      edges {
-        node {
-          id
-          fields {
-            slug
+    query BlogPostsListQuery {
+      allMdx(filter: { fields: { source: { eq: "blog-posts" } } }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date(formatString: "YYYY-MM-DD")
+              author
+            }
+            excerpt(pruneLength: 300)
           }
-          frontmatter {
-            title
-            date(formatString: "YYYY-MM-DD")
-          }
-          excerpt(pruneLength: 100)
         }
+        totalCount
       }
-      totalCount
     }
-  }
   `)
+
+  const placeholderImageURL = generateCustomPlaceholderURL(200, 200)
 
   return (
     <Layout pageInfo={{ pageName: "blog" }}>
       <SEO title="Blog" />
       <h1>Blog</h1>
-      <p>Welcome to the DevSkillDojo blog</p>
-      <ul>
-        {data.allMdx.edges.map( (edge, index) => {
+      <Row className="my-3">
+        {data.allMdx.edges.map((edge, index) => {
           return (
-            <Link to={`/${edge.node.fields.slug}`} key={index}>
-              <li >
-                <p>{edge.node.frontmatter.title}</p>
-                <p>{edge.node.frontmatter.date}</p>
-                <p>{edge.node.excerpt}</p>
-              </li>
-            </Link>
+            <Col className="col-12 col-sm-12 col-md-6 col-xl-4 my-2" key={index}>
+              <Card className="blog-card">
+                <Card.Img variant="top" src={placeholderImageURL} />
+                <Card.Body>
+                  <Card.Title className="blog-card-title">
+                    {edge.node.frontmatter.title}
+                  </Card.Title>
+                  <Card.Text>{edge.node.excerpt}</Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">
+                    <span className="text-muted float-left">Author: {edge.node.frontmatter.author}</span>
+                    <br />
+                    <span className="text-muted float-left">
+                      Posted On {edge.node.frontmatter.date}
+                    </span>
+                  </small>
+                </Card.Footer>
+              </Card>
+            </Col>
           )
         })}
-      </ul>
+      </Row>
     </Layout>
   )
 }

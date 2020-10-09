@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap"
 
-const CustomNavbar = (props) => {
+const SiteNavbar = (props) => {
   const { pageInfo, siteTitle } = props;
   console.log("Navbar props: ",props);
   return (
@@ -56,4 +56,4 @@ const CustomNavbar = (props) => {
   )
 }
 
-export default CustomNavbar
+export default SiteNavbar

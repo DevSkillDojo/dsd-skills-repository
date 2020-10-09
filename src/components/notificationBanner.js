@@ -1,15 +1,21 @@
 import PropTypes from "prop-types"
 import React from "react"
+import { Row, Col } from "react-bootstrap"
 
-const NotificationBanner = (props) => {
- 
+const NotificationBanner = props => {
   console.log("Show notification banner props: ", props)
-  const { showNotificationBanner } = props;
+  const { showNotificationBanner } = props
 
   return (
-    <div>
-      {showNotificationBanner && <p>This is a placeholder message for the notification banner</p>}
-    </div>
+    <>
+      {showNotificationBanner && (
+        <Row noGutters className="justify-content-center">
+          <Col>
+            <p>This is a placeholder message for the notification banner</p>
+          </Col>
+        </Row>
+      )}
+    </>
   )
 }
 
