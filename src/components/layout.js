@@ -9,18 +9,23 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
-//import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "./header"
+import NotificationBanner from "./notificationBanner"
 import Navbar from "./navBar"
 
 import "./gatsby-default-layout.css"
 
-const Layout = ({ children, pageInfo }) => {
+const Layout = (props) => {
+
+  console.log("Layout Props: ", props);
+
+  const { children, pageInfo } = props;
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          showNotificationBanner
         }
       }
     }
@@ -29,12 +34,14 @@ const Layout = ({ children, pageInfo }) => {
   return (
     <>
       <Container fluid className="px-0 main">
-        {/* <Row noGutters className="justify-content-center">
-          <Col>
-            <Header siteTitle={data.site.siteMetadata.title} />
-          </Col>
-        </Row> */}
-        <Navbar pageInfo={pageInfo} siteTitle={data.site.siteMetadata.title} />
+        <header>
+          <Row noGutters className="justify-content-center">
+            <Col>
+              <NotificationBanner showNotificationBanner={data.site.siteMetadata.showNotificationBanner} />
+            </Col>
+          </Row>
+          <Navbar pageInfo={pageInfo} siteTitle={data.site.siteMetadata.title} />
+        </header>
         <Row noGutters>
           <Col>
             <Container className="mt-5">

@@ -27,7 +27,7 @@ const Blog = () => {
   `)
 
   return (
-    <Layout>
+    <Layout pageInfo={{ pageName: "blog" }}>
       <SEO title="Blog" />
       <h1>Blog</h1>
       <p>Welcome to the DevSkillDojo blog</p>
@@ -44,8 +44,6 @@ const Blog = () => {
           )
         })}
       </ul>
-
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }

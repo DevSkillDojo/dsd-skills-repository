@@ -3,6 +3,7 @@ module.exports = {
     title: `DevSkillDojo`,
     description: `TODO`,
     author: `@devskilldojo`,
+    showNotificationBanner: false,
   },
   plugins: [
     `gatsby-plugin-sass`,
