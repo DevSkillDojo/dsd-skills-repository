@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-import { generateCustomPlaceholderURL } from "react-placeholder-image"
+//import { generateCustomPlaceholderURL } from "react-placeholder-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SubscribeWidget from "../components/subscribeWidget"
@@ -40,7 +40,7 @@ const Blog = () => {
   })
   console.log("Categories array: ",categoriesArray);
 
-  const placeholderImageURL = generateCustomPlaceholderURL(100, 100)
+  //const placeholderImageURL = generateCustomPlaceholderURL(100, 100)
 
   return (
     <Layout pageInfo={{ pageName: "blog" }}>
