@@ -5,7 +5,7 @@ const SiteFooter = props => {
   return (
     <Row noGutters>
       <Col className="footer-col">
-        <footer>
+        <footer className="bg-dark">
           <span>
             © {new Date().getFullYear()}, Built with
             {` `}

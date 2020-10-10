@@ -46,7 +46,7 @@ const Blog = () => {
     <Layout pageInfo={{ pageName: "blog" }}>
       <SEO title="Blog" />
 
-        <div className="hero-wrapper py-5">
+        <div className="hero-wrapper py-5 bg-dark">
           <div className="hero">
             <h1 className="hero-header display-2 mb-5">DevSkillDojo Blog</h1>
             <p>Exploring the skills needed for successful solution development</p>
@@ -56,36 +56,33 @@ const Blog = () => {
       <Container>
         <Row className="pt-5 my-3">
           <Col className="col-12 col-md-8">
-            <h2>All Posts</h2>
+            <h2 className="mb-4">All Posts</h2>
             {data.allMdx.edges.map((edge, index) => {
               return (
-                  <Card className="blog-card" key={index}>
+                <div key={index}>
+                  <h3 className="text-dark">
                     <Link className="link-no-style" to={`/${edge.node.fields.slug}`}>
-                      <Card.Body>
-                          <Card.Title className="blog-card-title">
-                          {edge.node.frontmatter.title}
-                          
-                          </Card.Title>
-                        <Card.Text>{edge.node.excerpt}</Card.Text>
-                      </Card.Body>
+                    {edge.node.frontmatter.title}
                     </Link>
-                    <Card.Footer>
-                      <small className="text-muted">
-                        <span className="text-muted float-left">Author: {edge.node.frontmatter.author}</span>
-                        <br />
-                        <span className="text-muted float-left">
-                          Posted On {edge.node.frontmatter.date}
-                        </span><br />
-                        <span className="text-muted float-left">
-                          {edge.node.frontmatter.category}
-                        </span><br />
-                      </small>
-                    </Card.Footer>
-                  </Card>
+                  </h3>
+                  <p>{edge.node.excerpt}</p>
+                  <div>
+                    <small className="text-muted">
+                    <span className="text-muted float-left">Author: {edge.node.frontmatter.author}</span>
+                    <br />
+                    <span className="text-muted float-left">
+                    Posted On {edge.node.frontmatter.date}
+                    </span><br />
+                    <span className="text-muted float-left">
+                    {edge.node.frontmatter.category}
+                    </span><br />
+                    </small>
+                    <hr />
+                  </div>
+                </div>
               )
             })}
             <div className="my-5" >
-              <hr />
               <p>Subscribe to our newsletter to make sure you don't miss anything</p>
               <SubscribeWidget />
             </div>

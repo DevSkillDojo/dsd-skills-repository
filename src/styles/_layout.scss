@@ -8,6 +8,7 @@ div.main {
   }
   
   a.link-no-style {
+    color: $dark;
     &:hover {
       text-decoration: none;
     }
@@ -25,7 +26,6 @@ div.main {
       margin-top: -60px;
       height: 60px;
       clear: both;
-      background-color: $color-primary;
       color: white;
       justify-content: center;
       width: 100%;
@@ -35,10 +35,6 @@ div.main {
         text-align: center;
       }
     }
-  }
-
-  .hero-wrapper {
-    background-color: $color-primary;
   }
 
   .hero {

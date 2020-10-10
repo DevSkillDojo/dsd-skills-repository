@@ -7,7 +7,7 @@ const SiteNavbar = (props) => {
   console.log("Navbar props: ",props);
   return (
     <>
-      <Navbar variant="dark" expand="lg" id="site-navbar">
+      <Navbar variant="dark" expand="lg" id="site-navbar" className="bg-dark">
         {/* <Container> */}
         <Link to="/" className="link-no-style">
             <Navbar.Brand as="span">{siteTitle}</Navbar.Brand>
@@ -46,7 +46,7 @@ const SiteNavbar = (props) => {
                   className="mr-2"
                 />
               </Form.Group>
-              <Button>Search</Button>
+              <Button className="bg-secondary border-secondary">Search</Button>
             </Form>
           </Nav>
         </Navbar.Collapse>
