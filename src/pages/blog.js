@@ -31,6 +31,15 @@ const Blog = () => {
     }
   `)
 
+  // Extract all categories from data
+  let categoriesArray = [];
+  data.allMdx.edges.forEach( post => {
+    if (!categoriesArray.includes(post.node.frontmatter.category)) {
+      categoriesArray.push(post.node.frontmatter.category);
+    }
+  })
+  console.log("Categories array: ",categoriesArray);
+
   const placeholderImageURL = generateCustomPlaceholderURL(100, 100)
 
   return (
@@ -78,14 +87,13 @@ const Blog = () => {
           <h3>Newsletter</h3>
           <p>Subscribe to our newsletter to make sure you don't miss anything</p>
           <SubscribeWidget />
-          <h3>Popular Posts</h3>
-          <p>TODO</p>
+          <hr />
           <h3>Categories</h3>
-          <p>Category 1</p>
-          <p>Category 2</p>
-          <p>Category 3</p>
-          <p>Category 4</p>
-          <p>Category 5</p>
+          {categoriesArray.map( (cat, index) => {
+            return(
+            <p key={index}>{cat}</p>
+            )
+          })}
         </Col>
       </Row>
     </Layout>
