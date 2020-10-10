@@ -7,8 +7,7 @@ const SiteNavbar = (props) => {
   console.log("Navbar props: ",props);
   return (
     <>
-      <Navbar variant="dark" expand="lg" id="site-navbar" className="bg-dark">
-        {/* <Container> */}
+      <Navbar sticky="top" variant="dark" expand="lg" className="bg-dark">
         <Link to="/" className="link-no-style">
             <Navbar.Brand as="span">{siteTitle}</Navbar.Brand>
         </Link>
@@ -50,7 +49,6 @@ const SiteNavbar = (props) => {
             </Form>
           </Nav>
         </Navbar.Collapse>
-        {/* </Container> */}
       </Navbar>
     </>
   )

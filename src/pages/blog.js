@@ -4,7 +4,7 @@ import { generateCustomPlaceholderURL } from "react-placeholder-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SubscribeWidget from "../components/subscribeWidget"
-import { Row, Card, Col, Container } from "react-bootstrap"
+import { Row, Col, Container } from "react-bootstrap"
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
@@ -45,14 +45,13 @@ const Blog = () => {
   return (
     <Layout pageInfo={{ pageName: "blog" }}>
       <SEO title="Blog" />
-
-        <div className="hero-wrapper py-5 bg-dark">
-          <div className="hero">
-            <h1 className="hero-header display-2 mb-5">DevSkillDojo Blog</h1>
-            <p>Exploring the skills needed for successful solution development</p>
-            <p>Subscribe to our newsletter to make sure you don't miss anything</p>
-          </div>
+      <div className="hero-wrapper py-5 bg-dark">
+        <div className="hero">
+          <h1 className="hero-header display-2 mb-5">DevSkillDojo Blog</h1>
+          <p>Exploring the skills needed for successful solution development</p>
+          <p>Subscribe to our newsletter to make sure you don't miss anything</p>
         </div>
+      </div>
       <Container>
         <Row className="pt-5 my-3">
           <Col className="col-12 col-md-8">

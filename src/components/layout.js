@@ -35,7 +35,7 @@ const Layout = (props) => {
   return (
     <>
       <Container fluid className="px-0 main">
-        <header>
+        <header className="site-header">
           <NotificationBanner showNotificationBanner={data.site.siteMetadata.showNotificationBanner} />
           <SiteNavbar pageInfo={pageInfo} siteTitle={data.site.siteMetadata.title} />
         </header>

@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import SubscribeWidget from "../components/subscribeWidget"
-import { Row, Container } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 
 const shortcodes = { Link } // Provide list of components that should be made available to MDX files here
 

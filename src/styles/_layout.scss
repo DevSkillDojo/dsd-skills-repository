@@ -1,45 +1,52 @@
 div.main {
-    min-height: 100vh;
-    padding-bottom: 60px;
-  }
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
   
-  div.full-height {
-    min-height: 100vh;
-  }
+div.full-height {
+  min-height: 100vh;
+}
   
-  a.link-no-style {
-    color: $dark;
-    &:hover {
-      text-decoration: none;
-    }
+a.link-no-style {
+  color: $dark;
+  &:hover {
+    text-decoration: none;
   }
+}
   
-  .footer-col {
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  footer {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    footer {
-      display: flex;
-      position: relative;
-      bottom: 0;
-      margin-top: -60px;
-      height: 60px;
-      clear: both;
-      color: white;
-      justify-content: center;
-      width: 100%;
-  
-      span {
-        align-self: center;
-        text-align: center;
-      }
+    position: relative;
+    bottom: 0;
+    margin-top: -60px;
+    height: 60px;
+    clear: both;
+    color: white;
+    justify-content: center;
+    width: 100%;
+
+    span {
+      align-self: center;
+      text-align: center;
     }
   }
+}
 
-  .hero {
-    text-align: center;
-    color: white;
-  }
+.hero {
+  text-align: center;
+  color: white;
+}
+
+.site-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
 

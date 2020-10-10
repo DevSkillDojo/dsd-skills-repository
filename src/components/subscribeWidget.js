@@ -10,7 +10,7 @@ const SubscribeWidget = props => {
           We'll never share your email with anyone else.
         </Form.Text>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button className="bg-secondary border-secondary" variant="primary" type="submit">
         Subscribe
       </Button>
     </Form>
