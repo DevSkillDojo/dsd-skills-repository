@@ -49,4 +49,23 @@ a.link-no-style {
   z-index: 100;
 }
 
+.welcome-header {
+  color: #fff;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1531656590736-7daa7b84554e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin-bottom: 20px;
+}
+
+.welcome-header h1 {
+  text-align: center;
+}
+
+.welcome-header p {
+  text-align: center;
+}
 
