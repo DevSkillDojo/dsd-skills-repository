@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog-posts`,
-        path: `${__dirname}/src/blog-posts`,
+        path: `${__dirname}/src/content/blog`,
       },
     },
     `gatsby-plugin-mdx`,
@@ -28,7 +28,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `skills-repository`,
-        path: `${__dirname}/src/skills-repository`,
+        path: `${__dirname}/src/content/skills`,
       },
     },
     {

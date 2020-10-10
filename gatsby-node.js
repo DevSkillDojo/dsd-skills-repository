@@ -20,9 +20,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === "Mdx") {
     console.log("Creating MDX node")
 
-    let indexStart = node.fileAbsolutePath.indexOf("/src/")
+    let indexStart = node.fileAbsolutePath.indexOf("/src/content/")
     const tail = node.fileAbsolutePath.substring(
-      indexStart + 5,
+      indexStart + 13,
       node.fileAbsolutePath.length
     )
     const source = tail.substring(0, tail.indexOf("/"))
@@ -34,9 +34,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       })
 
       let prefix = ""
-      if (source === "blog-posts") {
+      if (source === "blog") {
         prefix = "blog"
-      } else if (source === "skills-repository") {
+      } else if (source === "skills") {
         prefix = "repository"
       }
       const slugVal = createFilePath({ node, getNode })
@@ -77,7 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Loop over all MDX pages and create blog or skill pages (depending on source)
   result.data.allMdx.edges.forEach((edge, index) => {
     // Create Blog Pages
-    if (edge.node.fields.source === "blog-posts") {
+    if (edge.node.fields.source === "blog") {
       console.log("Creating blog post page: " + edge.node.fields.slug)
       createPage({
         path: edge.node.fields.slug,
@@ -90,7 +90,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     // Create Skill Pages
-    if (edge.node.fields.source === "skills-repository") {
+    if (edge.node.fields.source === "skills") {
       console.log("Creating skill page: " + edge.node.fields.slug)
       createPage({
         path: edge.node.fields.slug,

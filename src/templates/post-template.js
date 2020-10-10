@@ -23,8 +23,6 @@ const PostTemplate = props => {
           <SubscribeWidget />
         </div>
       </Container>
-
-
     </Layout>
   )
 }
