@@ -90,7 +90,7 @@ const Repository = (props) => {
               return (
                 <div key={index}>
                   <h4 className="text-dark">
-                    <Link className="link-no-style" to={`/`}>
+                    <Link className="link-no-style" to={`/repository/${skill.ontologyId}`}>
                     {skill.name}
                     </Link>
                   </h4>
