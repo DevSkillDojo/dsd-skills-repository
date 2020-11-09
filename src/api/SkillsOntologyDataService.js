@@ -7,7 +7,7 @@ class SkillsOntologyDataService {
       "Calling the ontology API to search Skills with string: " +text
     );
     
-    let url = `${ONTOLOGY_API_SKILLS_SEARCH_URL}?limit=${ONTOLOGY_SEARCH_LIMIT}&text=${text}`;
+    let url = `${ONTOLOGY_API_SKILLS_SEARCH_URL}?q=${text}`;
     console.log("GET request URL: "+url);
     return Axios.get(url);
   }

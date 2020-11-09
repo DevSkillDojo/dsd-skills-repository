@@ -31,13 +31,13 @@ const Repository = (props) => {
       const doSearch = async () => {
         const searchResult = await SkillsOntologyDataService.searchSkills(searchText);
         console.log("Data from ontology search service", searchResult.data);
-        if (searchResult.data.count === 0) {
+        if (searchResult.data.total.value === 0) {
           setShowAlert(true);
           setAlertHeading('No matching results found');
           setAlertBody('No skills found that match your provided input');
         } else {
           setShowResults(true);
-          setSkillsList(searchResult.data.result);
+          setSkillsList(searchResult.data.hits);
         }
       };
       doSearch().catch((e) => {
@@ -87,16 +87,17 @@ const Repository = (props) => {
           <hr />
           {showResults && <div>
             {skillsList.map((skill, index) => {
+              console.log("Mapping skill entry: ",skill)
               return (
                 <div key={index}>
                   <h4 className="text-dark">
-                    <Link className="link-no-style" to={`/repository/${skill.ontologyId}`}>
-                    {skill.name}
+                    <Link className="link-no-style" to={`/repository/${skill._source.path.S}`}>
+                    {skill._source.name.S}
                     </Link>
                   </h4>
-                  <p>{skill.description}</p>
+                  <p>{skill._source.description.S}</p>
                   <small className="text-muted">
-                    <span>Perspective: {skill.skillPerspectiveName}</span>
+                    <span>Perspective: {skill._source.perspective.S}</span>
                   </small>
                   <hr />
                 </div>
