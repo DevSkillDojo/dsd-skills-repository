@@ -91,7 +91,7 @@ const Repository = (props) => {
               return (
                 <div key={index}>
                   <h4 className="text-dark">
-                    <Link className="link-no-style" to={`/repository/${skill._source.path.S}`}>
+                    <Link className="link-no-style" to={`/repository${skill._source.path.S}`}>
                     {skill._source.name.S}
                     </Link>
                   </h4>

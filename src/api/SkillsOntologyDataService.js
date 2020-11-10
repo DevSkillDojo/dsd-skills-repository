@@ -1,4 +1,4 @@
-import { ONTOLOGY_API_SKILLS_SEARCH_URL , ONTOLOGY_SEARCH_LIMIT} from "../constants.js";
+import { ONTOLOGY_API_SKILLS_SEARCH_URL } from "../constants.js";
 import Axios from "axios";
 
 class SkillsOntologyDataService {
