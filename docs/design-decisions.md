@@ -14,3 +14,9 @@ The intention is to use Markdown files to contain the content for all skills. Th
   - node-sass (Because it is a dependency for gatsby-plugin-sass)
   - react-icons (For easy access to a variety of icons)
   - gatsby-theme-blog (For handling the blog side of things - This is an official plugin)
+
+### Data structure
+Each skill will have a LevelDefinitionType which states whether the definition of proficiency levels is:
+ - The DEFAULT
+ - CUSTOM for this skill
+ - INHERITED from its parent skill
