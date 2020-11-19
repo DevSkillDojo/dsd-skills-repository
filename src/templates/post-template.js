@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from "../components/layout"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+// import Img from "gatsby-image"
 import SubscribeWidget from "../components/subscribeWidget"
 import { Container } from "react-bootstrap"
 
@@ -12,8 +13,9 @@ const PostTemplate = props => {
   console.log("Blog Post Template props: ", props)
   return (
     <Layout>
-      <Container>
+      <Container className="blog-container"> 
         <h1 className="my-5">{props.data.mdx.frontmatter.title}</h1>
+        {/* <Img fluid={props.data.mdx.frontmatter.featuredImage.childImageSharp.fluid} /> */}
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
         </MDXProvider>
