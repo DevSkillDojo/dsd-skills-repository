@@ -13,8 +13,9 @@ const PostTemplate = props => {
   console.log("Blog Post Template props: ", props)
   return (
     <Layout>
-      <Container className="blog-container"> 
-        <h1 className="my-5">{props.data.mdx.frontmatter.title}</h1>
+      <Container className="px-5"> 
+        <h1 className="mt-5 mb-1">{props.data.mdx.frontmatter.title}</h1>
+        <p className="text-muted mb-5">Author: {props.data.mdx.frontmatter.author}, Published: {props.data.mdx.frontmatter.date}</p>
         {/* <Img fluid={props.data.mdx.frontmatter.featuredImage.childImageSharp.fluid} /> */}
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
@@ -36,6 +37,8 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        author
+        date
       }
     }
   }
