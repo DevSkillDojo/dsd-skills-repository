@@ -4,3 +4,129 @@ date: "2020-03-23"
 author: "Greg Fullard"
 category: "Skills Development"
 ---
+There are many difficulties related to solution development. One of the key
+stumbling blocks for many of us is the tendency to focus on the solution before
+we properly understand the problem.
+
+For me (and many other people smarter than me) a critical tool to overcome this
+tendency is the Domain Model. When done correctly, a domain model enables us to
+focus our attention squarely on the problem domain - ensuring we understand the
+concepts at play, their interrelationships, and the terminology used.
+
+Of course there are many other tools in our toolbox as analysts, and we'll start
+using many of them in the coming weeks, but I generally find myself reaching
+towards the domain model as my starting point.
+
+Below is a WIP (Work in Progress) domain model for the skills domain. Like any
+good model, it is very likely to evolve over time, but at this stage it is
+stable enough to be valuable already. This is a key lesson to avoid analysis
+paralysis: Use your analysis artefacts as soon as possible. Much like software:
+if you use it yourself, you will notice the flaws and improve it incrementally.
+
+So let's look at the model:
+
+DevSkillDojo Domain Model
+A good way of looking at this model would be to break
+it up into separate areas of concerns. The areas of concern are:
+
+* Skills
+* Learning Resources
+* Assessments
+* Party / Person
+* Project and Capability Requirements
+
+In "microservice-lingo", AKA DDD (Domain Driven Design), these areas of concern
+could even become bounded contexts, but I think we're getting ahead of ourselves
+here.
+
+For now it is more important for us to simply understand what the concepts are,
+and how they relate to each other.
+
+Skills
+Skills comprise the following important concepts:
+
+* The skills themselves.
+* The parent-child relationship that exists between skills. For example, Web Development is considered a skill, but it has many child skills, like HTML, CSS, JavaScript, etc.
+* Skills Perspective, from the skills framework, which allows us to approach different skills in different ways.
+* An enumeration of standardised proficiency levels for skills.
+* Leveled Skill, which allows us to differentiate between skills at different proficiency levels.
+* The dependency relationship that exists between skills at different levels.
+
+For example, as a Spring Cloud developer, you do require some skills in docker containers, but you certainly do not need to be an expert.
+
+Learning Resources\nLearning resources cover the vast area of learning resources that are available
+on the web and via other channels.
+
+The important concepts include:
+
+* The learning resource itself.
+* A standardised enumeration that allows us to classify resources into types.For example: Distinguishing between a YouTube video vs. a blog article. This is important because different people learn in different ways.
+* A standardised enumeration for the size of a given resource. For example, will it take 10 minutes to complete or 10 weeks.
+* The creator of the resource, i.e. the person or team who created the content.
+* The provider through which the resource can be accessed.
+* A standardised enumeration for the different types of providers.
+
+Additionally it is important to be aware that there are two critical association
+between the Learning Resources area of concern and the Skills area of concern:
+
+* At a general level, a skill can be developed by consuming a learning resource
+* At a more specific level, a learning resource is associated with a skill at a specific proficiency level.
+
+Party / Person
+
+Skills are inherently linked to individual people, but the relationship is not a\nsimple one.
+
+The important concepts in this area of concern are:
+
+* The person.
+* A rated skill that the person possesses.
+
+Also note that the person area of concern has three critical associations with\nother areas:
+
+* A rated skill is associated with a skill at a particular proficiency level.
+* A person may have conducted many proficiency assessments.
+* A person may be working on a particular project.
+
+Assessments\nAssessments are used to determine an individual person's proficiency in one or
+more skills. The important concepts in this area of concern are:
+
+* The proficiency assessment itself.
+* A standardised enumeration of the different types of assessments (Note: This enumeration still needs some work).
+
+As always, the assessments area of concern has a set of critical associations
+with other areas of concern:
+
+* An assessment is done by a specific person.
+* An assessment tests proficiency of one or more skills.
+
+Projects and Capability Requirements
+This area of concern is the one that recruiters are normally very interested in.
+You find it represented in job ads, with sentences like: "Our client is looking\nfor a seasoned developer with experience in X, Y and Z"
+
+It is easy to think of X, Y and Z above as just a listing of skills, but there
+is a subtle difference. Projects have a requirement for people with certain
+capabilities. And a capability is really a complex thing. As mentioned in the
+skills framework: A CAPABILITY is generally:
+
+* The application of one or more HARD SKILLS,
+* Guided by pre-existing underlying KNOWLEDGE
+* Using one or more TOOLS or TECHNOLOGIES
+* By a person with a set of SOFT SKILLS
+
+Conclusion
+As highlighted at the start of this post, the domain model presented here is a
+starting point. The model may look similar to a Class Diagram or even an ERD (if
+you're old-school, like me), but it's goal is very different. It allows us to
+talk about the concepts in this problem domain with a fair amount of
+intellectual rigour. 
+
+In addition to the model helping us think through the problem domain, each time
+we do so we may uncover additional aspects and the model may likely be adjusted.
+In fact, even though I prepared the diagram about 2 weeks ago, prior to the
+corona craziness that swept the globe recently, I made several changes while
+writing this article.
+
+If you'd like to stay in touch with our progression on this journey of
+exploration, follow this blog (http://devskilldojo.com [/]) or our twitter feed(@devskilldojo). 
+And if you have any feedback on the framework, please drop us a\nnote on Twitter.
+            
