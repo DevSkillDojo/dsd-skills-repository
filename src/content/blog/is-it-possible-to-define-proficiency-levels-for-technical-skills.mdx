@@ -4,3 +4,159 @@ date: "2020-04-20"
 author: "Greg Fullard"
 category: "Skills Development"
 ---
+A consistent and very unfortunate aspect of the software engineering profession
+is that we don't have clearly defined proficiency standards like other
+professions and trades.
+
+As a result, companies are forced to "roll-their-own" proficiency verification
+processes. This results in tedious applicant screening processes that frustrate
+everybody involved. But additionally, and I would argue more importantly, it
+makes it difficult for practitioners to truly gauge their own proficiency,
+which, in turn, makes it difficult to accurately plan our improvement and
+learning journey.
+
+So let's contrast this situation with any other profession, for example, the
+accounting profession. 
+
+Photo by Kelly Sikkema
+[https://unsplash.com/@kellysikkema?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit] 
+/ Unsplash
+[https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit]
+
+The accounting profession relies on a three-pronged approach for proficiency
+standardisation. In most countries this is managed by an industry body which:
+
+* Provides guidance to universities w.r.t curriculum design
+* Administers industry entrance exams
+* Administers mandatory annual professional development programs
+
+The result of this approach is that anybody who carries the certification of "CA", or "CPA" (Depending on your country) can generally be assumed to have all
+the relevant skills and knowledge to perform the role of an accountant.
+
+For a professional technologist, the situation is a bit different. Of course,
+there are many local and international industry bodies that we can belong to.
+Organisations like the IEEE, IIBA, AEA and PMI spring to mind. Unfortunately
+though, being a member of one of these bodies is largely voluntary and does not
+guarantee a minimum level of proficiency. Perhaps I'm being harsh here, because
+the PMI and IIBA have certainly made great strides towards standardising skills
+in the project management and business analysis fields.
+
+Photo by Christina @ wocintechchat.com
+[https://unsplash.com/@wocintechchat?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit] 
+/ Unsplash
+[https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit]
+
+But this brings us to the field of software development, where the problem is
+very pronounced. In certain pockets we do still have formal certifications that
+guarantee a minimum standard (for example, the Oracle Java Certification path),
+but the reality is that the skills needed by a modern developer has become too
+broad and dynamic to be managed via a bureaucratic certification program. 
+
+In many ways, our industry is a lot like the early days of the medical
+profession, where anybody who wanted to call themselves a doctor could easily do so.
+
+Which brings us to our current reality where recruiters employ tedious screening
+processes and bespoke skills-assessment tests to determine whether a person's
+actual skills match what their resume proclaims. While these processes may help
+to separate the wheat from the chaff, there is still a significant amount of
+subjectivity involved. And additionally, this focuses specifically on
+recruitment, which is only a part of the problem.
+
+I would love to be in a situation where we have an objective way for a person to
+assess (and profess) their own skills. Most developer resumes include some form
+of "Skills Matrix" which lists the person's skill and then offers a 5 level
+rating system for specifying  their proficiency. Typically the levels are as
+follows:
+
+5 = High level of competence - extensive experience in the skill area
+4 = Moderately high level of competence - good experience in the skill area
+3 = Average level of competence – some experience in the skill area
+2 = Low level of competence – little experience in the skill area
+1 = No level of competence – no experience in the skill area
+
+In my opinion, such a definition of skill levels mean almost nothing, and I've
+had countless examples where people claim to be a "level 5 expert" at a topic
+that they know almost nothing about. The most memorable example was a junior
+developer who claimed to be a PDF expert because he knew exactly how to download
+and open any PDF document he found on the internet. He literally didn't even
+know that it was possible to render a PDF document using a structured input
+language like XML or LaTeX.
+
+For DevSkillDojo I am therefore working on a simple, but objective, system for
+assessing a person's technical proficiency in a given skill. The idea is that a
+person should be able to objectively rate their own proficiency, which can then
+serve as a great input to finding the correct learning path for the individual.
+Such a system is valuable in many settings, including recruitment, project
+allocation, career planning and skills development planning.
+
+Effectively, I'm looking for a technical equivalent to the Interagency Language
+Roundtable scale for language proficiency (https://en.wikipedia.org/wiki/ILR_scale)
+
+Photo by Regis F
+[https://unsplash.com/@herosordinaires?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit] 
+/ Unsplash
+[https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit]
+
+Due to the broad nature of software development, I believe we will need to have:
+
+* Generic definitions of proficiency levels.
+* Specific definitions that apply at lower levels of the skills-tree which may override the generic definitions.
+
+So effectively we are using the Object Oriented principle of inheritence for
+managing proficiency levels. Fancy that.
+
+Below are the generic definitions I am using as a starting point. Keep in mind,
+that where the definitions can't be used for a specific skill in the ontology,
+it will then be overridden.
+
+Level 0: No Proficiency
+I have no knowledge of this skill, or I may have some knowledge, but really only
+enough to use the word correctly in a sentence.
+
+Level 1: Fundamental Awareness (Basic Knowledge)
+I have read up on this skill and worked through some tutorials.
+
+Level 2: Novice (Limited Experience)
+I have built a solution using this skill, without following steps in a tutorial,
+i.e. getting the solution to work required some self-directed searching on
+Google and StackOverflow. I generally expect help from a more experienced
+practitioner to successfully apply this skill.
+
+Level 3: Intermediate (Practical Application)
+I have built multiple non-trivial solutions using this skill. Solutions include
+at least one client project or, if the solution was a personal project, a
+project published on the public internet. I may still require guidance from a
+more experienced practitioner in some aspects, but generally I can apply the
+skill independently.
+
+Level 4: Experienced (Applied Theory)
+Same as Intermediate plus: I have built one or more solutions in a project
+leadership role with limited or no assistance from colleagues. I can apply this
+skill entirely without assistance. Within my team, I am recognised as the
+"Person to ask" when it comes to this particular skill. Additionally, I am able
+to offer coaching to colleagues in this skill.
+
+Level 5: Expert (Recognised Authority)
+Same as Experienced plus: In addition to this particular skill, I am also
+experienced in a number of alternative and complementary skills. As a result I
+am able to evaluate (and lead) design decisions that are impacted by the
+application of this skill. My broad knowledge in this particular skills domain
+also allows me to understand how different components can work together to form
+an end-to-end solution. Additionally, I can write and present training material,
+reference materials and opinion pieces related to this skill.
+
+These definitions are used in the DevSkillDojo skills domain model (https://devskilldojo.com/skills-domain-model/ [/skills-domain-model/]) as well
+as the skills ontology (not published yet).
+
+Note: I have taken a lot of inspiration from the Competencies Proficiency Scale
+published by the NIH while compiling the above definitions (https://hr.nih.gov/working-nih/competencies/competencies-proficiency-scale).
+
+Lastly, take note that I'll be posting regular updates from the DevSkillDojo
+journey. If you'd like to come along for the ride, follow my blog (http://devskilldojo.com [/]) and Twitter feed (@devskilldojo). 
+And don't be a stranger, join in the conversation on Twitter.
+
+Photo by Dino Reichmuth
+[https://unsplash.com/@dinoreichmuth?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit] 
+/ Unsplash
+[https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit]
+            
