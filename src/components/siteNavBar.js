@@ -28,12 +28,16 @@ const SiteNavbar = (props) => {
                 </Nav.Link>
                 </Link>
             </Nav.Item>
-            <NavDropdown title="Products" id="products">
+            <NavDropdown title="Skills Framework" id="skills-framework">
+                <NavDropdown.Item eventKey="skills-framework-overview"><Link to="/skills-framework/overview" className="link-no-style">Overview</Link></NavDropdown.Item>
+                <NavDropdown.Item eventKey="skills-domain-model"><Link to="/skills-framework/skills-domain-model" className="link-no-style">Skills Domain Model</Link></NavDropdown.Item>
+            </NavDropdown>
+            {/* <NavDropdown title="Products" id="products">
                 <NavDropdown.Item eventKey="skills-knowledgebase">Skills KnowledgeBase</NavDropdown.Item>
                 <NavDropdown.Item eventKey="skills-ontology-api">Skills Ontology API</NavDropdown.Item>
                 <NavDropdown.Item eventKey="skills-manager-app">Skills Manager App</NavDropdown.Item>
                 <NavDropdown.Item eventKey="skills-management-consulting">Skills Management Consulting</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
 
           <Nav className="ml-auto">
