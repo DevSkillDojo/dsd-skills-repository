@@ -14,6 +14,11 @@ The intention is to use Markdown files to contain the content for all skills. Th
   - node-sass (Because it is a dependency for gatsby-plugin-sass)
   - react-icons (For easy access to a variety of icons)
   - gatsby-theme-blog (For handling the blog side of things - This is an official plugin)
+  - gatsby-remark-images (For referencing images from within markdown files)
+  - gatsby-remark-embed-video (For embedding video from within markdown files)
+
+### Store Images Locally
+Although most images on the site are actually pulled from online sources (Mostly unsplash), the image files are stored locally as part of the application. This allows us to use the gatsby-remark-images component for embedding images in markdown files.
 
 ### Data structure
 Each skill will have a LevelDefinitionType which states whether the definition of proficiency levels is:
