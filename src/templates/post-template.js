@@ -23,7 +23,7 @@ const PostTemplate = props => {
       </div>
       {/* <Img fluid={props.data.file.childImageSharp.fluid} /> */}
       {/* <Figure url="../images/Mountains.jpg" alt="Torri gate" caption="Testing" /> */}
-      <Container className="px-5"> 
+      <Container className="px-5 blog-container"> 
         <h1 className="mt-5 mb-1">{props.data.mdx.frontmatter.title}</h1>
         <p className="text-muted mb-5">Author: {props.data.mdx.frontmatter.author}, Published: {props.data.mdx.frontmatter.date}</p>
         {/* <Img fluid={props.data.mdx.frontmatter.featuredImage.childImageSharp.fluid} /> */}
