@@ -9,7 +9,7 @@ import { Row, Col, Container } from "react-bootstrap"
 const Blog = () => {
   const data = useStaticQuery(graphql`
     query BlogPostsListQuery {
-      allMdx(filter: { fields: { source: { eq: "blog" } } }) {
+      allMdx(sort: {fields: frontmatter___date, order: DESC}, filter: { fields: { source: { eq: "blog" } } }) {
         edges {
           node {
             id
