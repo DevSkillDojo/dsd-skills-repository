@@ -25,7 +25,9 @@ if you use it yourself, you will notice the flaws and improve it incrementally.
 
 So let's look at the model:
 
-DevSkillDojo Domain Model
+![DevSkillDojo Domain Model](../../images/DevSkillDojo-Domain-Model.png "DevSkillDojo Domain Model")
+
+
 A good way of looking at this model would be to break
 it up into separate areas of concerns. The areas of concern are:
 
@@ -42,7 +44,7 @@ here.
 For now it is more important for us to simply understand what the concepts are,
 and how they relate to each other.
 
-Skills
+### Skills
 Skills comprise the following important concepts:
 
 * The skills themselves.
@@ -54,7 +56,8 @@ Skills comprise the following important concepts:
 
 For example, as a Spring Cloud developer, you do require some skills in docker containers, but you certainly do not need to be an expert.
 
-Learning Resources\nLearning resources cover the vast area of learning resources that are available
+### Learning Resources
+Learning resources cover the vast area of learning resources that are available
 on the web and via other channels.
 
 The important concepts include:
@@ -72,7 +75,7 @@ between the Learning Resources area of concern and the Skills area of concern:
 * At a general level, a skill can be developed by consuming a learning resource
 * At a more specific level, a learning resource is associated with a skill at a specific proficiency level.
 
-Party / Person
+### Party / Person
 
 Skills are inherently linked to individual people, but the relationship is not a\nsimple one.
 
@@ -87,7 +90,8 @@ Also note that the person area of concern has three critical associations with\n
 * A person may have conducted many proficiency assessments.
 * A person may be working on a particular project.
 
-Assessments\nAssessments are used to determine an individual person's proficiency in one or
+### Assessments
+Assessments are used to determine an individual person's proficiency in one or
 more skills. The important concepts in this area of concern are:
 
 * The proficiency assessment itself.
@@ -99,21 +103,21 @@ with other areas of concern:
 * An assessment is done by a specific person.
 * An assessment tests proficiency of one or more skills.
 
-Projects and Capability Requirements
+### Projects and Capability Requirements
 This area of concern is the one that recruiters are normally very interested in.
 You find it represented in job ads, with sentences like: "Our client is looking\nfor a seasoned developer with experience in X, Y and Z"
 
 It is easy to think of X, Y and Z above as just a listing of skills, but there
 is a subtle difference. Projects have a requirement for people with certain
 capabilities. And a capability is really a complex thing. As mentioned in the
-skills framework: A CAPABILITY is generally:
+skills framework: **A CAPABILITY is generally:**
 
 * The application of one or more HARD SKILLS,
 * Guided by pre-existing underlying KNOWLEDGE
 * Using one or more TOOLS or TECHNOLOGIES
 * By a person with a set of SOFT SKILLS
 
-Conclusion
+### Conclusion
 As highlighted at the start of this post, the domain model presented here is a
 starting point. The model may look similar to a Class Diagram or even an ERD (if
 you're old-school, like me), but it's goal is very different. It allows us to
@@ -127,6 +131,6 @@ corona craziness that swept the globe recently, I made several changes while
 writing this article.
 
 If you'd like to stay in touch with our progression on this journey of
-exploration, follow this blog (http://devskilldojo.com [/]) or our twitter feed(@devskilldojo). 
-And if you have any feedback on the framework, please drop us a\nnote on Twitter.
+exploration, follow this blog (http://devskilldojo.com) or our twitter feed(@devskilldojo). 
+And if you have any feedback on the framework, please drop us a note on Twitter.
             
