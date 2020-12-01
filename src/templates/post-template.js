@@ -18,7 +18,7 @@ const PostTemplate = props => {
         <div className="hero">
           <h1 className="hero-header display-2 mb-5">DevSkillDojo Blog</h1>
           <p>Exploring the skills needed for successful solution development</p>
-          <p>Subscribe to our newsletter to make sure you don't miss anything</p>
+          {/* <p>Subscribe to our newsletter to make sure you don't miss anything</p> */}
         </div>
       </div>
       {/* <Img fluid={props.data.file.childImageSharp.fluid} /> */}
@@ -30,11 +30,11 @@ const PostTemplate = props => {
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
         </MDXProvider>
-        <div className="my-5" >
+        {/* <div className="my-5" >
           <hr />
           <p>Subscribe to our newsletter to make sure you don't miss anything</p>
           <SubscribeWidget />
-        </div>
+        </div> */}
       </Container>
     </Layout>
   )

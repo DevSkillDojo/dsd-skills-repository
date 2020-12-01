@@ -49,7 +49,7 @@ const Blog = () => {
         <div className="hero">
           <h1 className="hero-header display-2 mb-5">DevSkillDojo Blog</h1>
           <p>Exploring the skills needed for successful solution development</p>
-          <p>Subscribe to our newsletter to make sure you don't miss anything</p>
+          {/* <p>Subscribe to our newsletter to make sure you don't miss anything</p> */}
         </div>
       </div>
       <Container>
@@ -81,16 +81,16 @@ const Blog = () => {
                 </div>
               )
             })}
-            <div className="my-5" >
+            {/* <div className="my-5" >
               <p>Subscribe to our newsletter to make sure you don't miss anything</p>
               <SubscribeWidget />
-            </div>
+            </div> */}
           </Col>
           <Col className="col-12 col-md-4">
-            <h3>Newsletter</h3>
+            {/* <h3>Newsletter</h3>
             <p>Subscribe to our newsletter to make sure you don't miss anything</p>
             <SubscribeWidget />
-            <hr />
+            <hr /> */}
             <h3>Categories</h3>
             {categoriesArray.map( (cat, index) => {
               return(

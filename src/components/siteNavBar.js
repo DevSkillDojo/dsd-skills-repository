@@ -14,13 +14,13 @@ const SiteNavbar = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto" activeKey={pageInfo && pageInfo.pageName}>
-            <Nav.Item>
+            {/* <Nav.Item>
                 <Link to="/repository" className="link-no-style">
                 <Nav.Link as="span" eventKey="repository">
                     Repository
                 </Nav.Link>
                 </Link>
-            </Nav.Item>
+            </Nav.Item> */}
             <Nav.Item>
                 <Link to="/blog" className="link-no-style">
                 <Nav.Link as="span" eventKey="blog">
@@ -40,7 +40,7 @@ const SiteNavbar = (props) => {
             </NavDropdown> */}
           </Nav>
 
-          <Nav className="ml-auto">
+          {/* <Nav className="ml-auto">
             <Form inline onSubmit={e => e.preventDefault()}>
               <Form.Group>
                 <FormControl
@@ -51,7 +51,7 @@ const SiteNavbar = (props) => {
               </Form.Group>
               <Button className="bg-secondary border-secondary">Search</Button>
             </Form>
-          </Nav>
+          </Nav> */}
         </Navbar.Collapse>
       </Navbar>
     </>

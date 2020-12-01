@@ -51,7 +51,7 @@ a.link-no-style {
 
 .welcome-header {
   color: #fff;
-  height: 100vh;
+  height: calc(100vh - 60px - 56px);
   background-image: url(https://images.unsplash.com/photo-1531656590736-7daa7b84554e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
   background-size: cover;
   display: flex;
