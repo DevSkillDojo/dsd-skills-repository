@@ -3,11 +3,12 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import { Container } from "react-bootstrap"
+import DomainModelImage from "../../images/DevSkillDojo_Domain_Model.png"
 
 const SkillsDomainModel = () => (
   <Layout>
     <SEO title="Skills Domain Model" />
-    <Container className="px-5"> 
+    <Container className="px-5 mb-5"> 
       <h1 className="mt-5 mb-1">Skills Domain Model</h1>
       <p>Release Date: 2020-04-10</p>
       <p>Version: 0.0.5</p>
@@ -17,7 +18,7 @@ const SkillsDomainModel = () => (
 
       <p>The UML diagram below provides a visual depiction of the domain model:</p>
 
-      <p>TODO - IMAGE</p>
+      <img src={DomainModelImage} alt="Skills Domain Model" />
     </Container>
   </Layout>
 )

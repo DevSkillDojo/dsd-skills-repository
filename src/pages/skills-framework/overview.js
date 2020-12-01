@@ -3,11 +3,12 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import { Container } from "react-bootstrap"
+import FrameWorkImage from "../../images/DevSkillDojo_Skills_Framework-1.png"
 
 const SkillsFrameworkOverview = () => (
   <Layout>
     <SEO title="Skills Framework Overview" />
-    <Container className="px-5"> 
+    <Container className="px-5 mb-5"> 
       <h1 className="mt-5 mb-1">Skills Framework</h1>
       <p>Release Date: 2020-03-07</p>
       <p>Version: 0.0.3</p>
@@ -34,14 +35,14 @@ const SkillsFrameworkOverview = () => (
         <li>By a person with a set of SOFT SKILLS</li>
       </ul>
 
-      <p>TODO - IMAGE</p>
+      <img src={FrameWorkImage} alt="Skills Framework" />
 
-      <h3>Diagram Notes:</h3>
+      <h5 className="mt-5">Diagram Notes:</h5>
       <ul>
         <li>Domains are derived from the North American Industry Classification System (NAICS), but with specific adjustments to align with the goals of this frameworkFurther detail of the framework is provided in the domain model and skills ontology (documented separately)</li>
       </ul>
 
-      <p>Further detail of the framework is provided in the domain model and skills ontology (Not published yet)</p>
+      <p className="mt-5">Further detail of the framework is provided in the domain model and skills ontology (Not published yet)</p>
 
     </Container>
   </Layout>
