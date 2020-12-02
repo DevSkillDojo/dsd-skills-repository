@@ -98,8 +98,13 @@ a.link-no-style {
 }
 
 /* Give links in the footer a nice soft grey color*/
+.footer-menu ul {
+  padding-inline-start: 0px;
+}
+
+/* Give links in the footer a nice soft grey color*/
 .footer-menu ul li a {
-    color: #898b96;
+  color: #898b96;
   font-size: 15px;
   line-height: 32px;
 }
