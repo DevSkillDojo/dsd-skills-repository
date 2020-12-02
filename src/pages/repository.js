@@ -51,8 +51,6 @@ const Repository = (props) => {
       setAlertHeading('No search text provided');
       setAlertBody('Please provide some text to search on. The skills ontology provides full-text search capability, so you can provide partial text ');
     }
-
- 
   };
 
   return (
