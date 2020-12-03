@@ -54,11 +54,16 @@ a.link-no-style {
   height: calc(100vh - 56px);
   background-image: url(https://images.unsplash.com/photo-1531656590736-7daa7b84554e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
   background-size: cover;
+  background-position: center bottom;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  // margin-bottom: 20px;
+  //align-items: center;
+  //margin-bottom: 20px;
+}
+
+.welcome-header .welcome-text {
+  padding-bottom: 10%;
 }
 
 .welcome-header h1 {
