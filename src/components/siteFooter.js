@@ -15,10 +15,7 @@ const SiteFooter = props => {
               <ul>
                 <li>
                   <Link to="/about">About Us</Link>
-                </li>       
-                <li>
-                  <Link to="/contact">Contact Us</Link>
-                </li>              
+                </li>                    
               </ul>
             </div>
           </Col>
@@ -27,11 +24,14 @@ const SiteFooter = props => {
               {/* <h4 className="footer-menu-subtitle">Products & Services</h4> */}
               <ul>
                 <li>
+                  <Link to="/contact">Contact Us</Link>
+                </li> 
+                {/* <li>
                   <Link to="/pricing">Plans &amp; Pricing</Link>
                 </li>
                 <li>
                   <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
-                </li>                      
+                </li>                       */}
               </ul>
             </div>
           </Col>
@@ -39,9 +39,9 @@ const SiteFooter = props => {
             <div className="footer-menu">
               {/* <h4 className="footer-menu-subtitle">Contact</h4> */}
               <ul>
-                <li>
+                {/* <li>
                   <Link to="/communities">Social Media & Communities</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/credits">Photo Credits</Link>
                 </li> 
