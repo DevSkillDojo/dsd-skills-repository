@@ -7,6 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
+    "@react-icons/all-files": "^4.1.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "gatsby": "^2.27.0",

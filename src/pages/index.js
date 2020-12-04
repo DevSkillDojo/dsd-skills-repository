@@ -8,8 +8,10 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Container fluid className="px-0">
     <div className="welcome-header">
-      <h1 className="display-4">Welcome to DevSkillDojo</h1>
-      <p className="lead mt-4 mb-5">Helping passionate people build world-class technical teams</p>
+      <div className="welcome-text">
+        <h1 className="display-4">Welcome to DevSkillDojo</h1>
+        <p className="lead mt-4 mb-5">Helping passionate people build world-class technical teams</p>
+      </div>
     </div>
     </Container>
   </Layout>
