@@ -43,7 +43,7 @@ const SiteFooter = props => {
                   <Link to="/communities">Social Media & Communities</Link>
                 </li> */}
                 <li>
-                  <Link to="/credits">Photo Credits</Link>
+                  <Link to="/credits">Credits</Link>
                 </li> 
               </ul>
             </div>
