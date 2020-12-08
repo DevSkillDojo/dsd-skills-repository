@@ -87,10 +87,10 @@ const Blog = () => {
             </div> */}
           </Col>
           <Col className="col-12 col-md-4">
-            {/* <h3>Newsletter</h3>
+            <h3>Newsletter</h3>
             <p>Subscribe to our newsletter to make sure you don't miss anything</p>
             <SubscribeWidget />
-            <hr /> */}
+            <hr />
             <h3>Categories</h3>
             {categoriesArray.map( (cat, index) => {
               return(
