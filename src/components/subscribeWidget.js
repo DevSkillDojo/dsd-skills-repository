@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Form, Button, Modal, Alert } from "react-bootstrap"
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 
@@ -26,9 +26,10 @@ const SubscribeWidget = props => {
           setErrorMsg({__html: response.msg});
           handleShowAlert();
         } else {
-          alert("You have been successfully subscribed to the newsletter, please keep an eye out for the welcome email in your mailbox");
+          console.log("You have been successfully subscribed to the newsletter, please keep an eye out for the welcome email in your mailbox");
+          handleCloseModal();
+          props.resultCallback(true);
         }
-
       })
       .catch((error) => {
         // Errors in here are client side

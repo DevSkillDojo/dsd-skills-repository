@@ -1,12 +1,19 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, Link, graphql } from "gatsby"
 //import { generateCustomPlaceholderURL } from "react-placeholder-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SubscribeWidget from "../components/subscribeWidget"
-import { Row, Col, Container } from "react-bootstrap"
+import { Row, Col, Container, Alert } from "react-bootstrap"
 
 const Blog = () => {
+
+  const [showSubscribeSuccess, setShowSubscribeSuccess] = useState(false);
+  const handleSubscriptionResult = (result) => {
+    console.log("Setting subscription result to: "+result);
+    setShowSubscribeSuccess(result);
+  }
+
   const data = useStaticQuery(graphql`
     query BlogPostsListQuery {
       allMdx(sort: {fields: frontmatter___date, order: DESC}, filter: { fields: { source: { eq: "blog" } } }) {
@@ -81,15 +88,33 @@ const Blog = () => {
                 </div>
               )
             })}
-            {/* <div className="my-5" >
-              <p>Subscribe to our newsletter to make sure you don't miss anything</p>
-              <SubscribeWidget />
-            </div> */}
+            {!showSubscribeSuccess && <div>
+                <p>Subscribe to our newsletter to make sure you don't miss anything</p>
+                <SubscribeWidget resultCallback={handleSubscriptionResult}/>
+              </div>
+            }
+            {showSubscribeSuccess && <div>
+                <Alert variant="primary">
+                  <Alert.Heading>Thank you!</Alert.Heading>
+                  You have successfully subscribed to our newsletter. Please keep an eye on your inbox for the welcome message.
+                </Alert>
+              </div>
+            }
           </Col>
           <Col className="col-12 col-md-4">
-            <h3>Newsletter</h3>
-            <p>Subscribe to our newsletter to make sure you don't miss anything</p>
-            <SubscribeWidget />
+            {!showSubscribeSuccess && <div>
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to make sure you don't miss anything</p>
+                <SubscribeWidget resultCallback={handleSubscriptionResult}/>
+              </div>
+            }
+            {showSubscribeSuccess && <div>
+                <Alert variant="primary">
+                  <Alert.Heading>Thank you!</Alert.Heading>
+                  You have successfully subscribed to our newsletter. Please keep an eye on your inbox for the welcome message.
+                </Alert>
+              </div>
+            }
             <hr />
             <h3>Categories</h3>
             {categoriesArray.map( (cat, index) => {
