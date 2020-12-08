@@ -98,6 +98,12 @@ module.exports = {
         bucketName: "devskilldojo.com",
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://devskilldojo.us7.list-manage.com/subscribe/post?u=9c206e14376964ab55b365616&amp;id=52fb956807',
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
