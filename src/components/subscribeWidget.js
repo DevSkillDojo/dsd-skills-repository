@@ -5,6 +5,8 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 const SubscribeWidget = props => {
 
   const [showModal, setShowModal] = useState(false);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -18,7 +20,7 @@ const SubscribeWidget = props => {
     e.preventDefault();
     console.log("Submitting subscribe form. Email = "+email);
 
-    addToMailchimp(email)
+    addToMailchimp(email, {FNAME: firstName, LNAME: lastName})
       .then((response) => {
         console.log(response);
         if (response.result === 'error') {
@@ -44,6 +46,14 @@ const SubscribeWidget = props => {
     setEmail(e.currentTarget.value);
   };
 
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.currentTarget.value);
+  };
+
+  const handleLastNameChange = (e) => {
+    setLastName(e.currentTarget.value);
+  };
+
   return (
     <>
     <Button variant="primary" onClick={handleShowModal}>
@@ -58,7 +68,9 @@ const SubscribeWidget = props => {
       
       <Modal.Body>
         <Form.Group controlId="formBasicEmail">
-          <Form.Control name="email" type="email" placeholder="Email address" onChange={handleEmailChange} />
+          <Form.Control className="my-2" name="FNAME" type="text" placeholder="First name" onChange={handleFirstNameChange} required />
+          <Form.Control className="my-2" name="LNAME" type="text" placeholder="Last name" onChange={handleLastNameChange} required />
+          <Form.Control className="my-2" name="EMAIL" type="email" placeholder="Email address" onChange={handleEmailChange} required />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
