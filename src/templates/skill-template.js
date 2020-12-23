@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from "../components/layout"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Container } from "react-bootstrap"
+import { Container, Row, Col, Image } from "react-bootstrap"
 
 const shortcodes = { Link } // Provide list of components that should be made available to MDX files here
 
@@ -12,10 +12,32 @@ const SkillTemplate = props => {
   return (
     <Layout>
       <Container>
-        <h1 className="my-5">{props.data.mdx.frontmatter.title}</h1>
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
-        </MDXProvider>
+        <Row className="skill-page-header my-4">
+          <Col className="skill-page-header-left" sm={10}>
+            <h1>{props.data.mdx.frontmatter.title}</h1>
+            <p>{props.data.mdx.frontmatter.description}</p>
+            <p>Fully Qualified Name: {props.data.mdx.frontmatter.fqn}</p>
+          </Col>
+          <Col className="skill-page-header-right" sm={2}>
+            {props.data.mdx.frontmatter.logo && <Image src={props.data.mdx.frontmatter.logo} alt="logo" fluid/>}
+          </Col>
+        </Row>
+        <Row className="skill-page-body">
+          <Col className="skill-page-body-left" sm={10}>
+            <MDXProvider components={shortcodes}>
+              <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
+            </MDXProvider>
+          </Col>
+          <Col className="skill-page-body-right" sm={2}>
+            <h5 className="mb-3">Metadata</h5>
+            <p>Perspective: {props.data.mdx.frontmatter.perspective}</p>
+            <p>Last Updated: {props.data.mdx.frontmatter.updated}</p>
+            <hr />
+            <h5 className="mb-3">My Progress</h5>
+            <p>Level: TODO</p>
+            <p>Currently Learning</p>
+          </Col>
+        </Row>
       </Container>
     </Layout>
   )
@@ -27,7 +49,12 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
-        title
+        title,
+        fqn,
+        logo,
+        description,
+        perspective,
+        updated
       }
     }
   }
