@@ -17,7 +17,14 @@ const SkillTemplate = props => {
             <h1>{props.data.mdx.frontmatter.title}</h1>
             <p>{props.data.mdx.frontmatter.description}</p>
             <p>Fully Qualified Name: {props.data.mdx.frontmatter.fqn}</p>
-          </Col>
+            <h2>General References:</h2>
+            <ul>
+              {props.data.mdx.frontmatter.references.map((ref, i) => {
+                console.log("Found a reference: "+ref.name);
+                return (<li key={ref.name}><a href={ref.url}>{ref.name}</a></li>)})
+              } 
+            </ul>
+           </Col>
           <Col className="skill-page-header-right" sm={2}>
             {props.data.mdx.frontmatter.logo && <Image src={props.data.mdx.frontmatter.logo} alt="logo" fluid/>}
           </Col>
@@ -54,7 +61,11 @@ export const pageQuery = graphql`
         logo,
         description,
         perspective,
-        updated
+        updated,
+        references {
+          name,
+          url
+        }
       }
     }
   }
