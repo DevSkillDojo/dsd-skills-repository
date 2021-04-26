@@ -102,4 +102,8 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     }
   })
+
+  // Create redirects for old URLs
+  const {createRedirect} = actions 
+  createRedirect({ fromPath: '/exploring-the-skills-problem-tech-lead-perspective', toPath: '/blog/exploring-the-skills-problem-tech-lead-perspective', isPermanent: true });
 }

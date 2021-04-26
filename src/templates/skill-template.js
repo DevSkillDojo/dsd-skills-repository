@@ -33,7 +33,6 @@ const SkillTemplate = props => {
     // TODO - Make an API call
   }
 
-
   return (
     <Layout>
       <Container>
