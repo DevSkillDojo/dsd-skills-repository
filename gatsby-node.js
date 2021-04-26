@@ -103,7 +103,22 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
+<<<<<<< HEAD
   // Create redirects for old URLs
   const {createRedirect} = actions 
   createRedirect({ fromPath: '/exploring-the-skills-problem-tech-lead-perspective', toPath: '/blog/exploring-the-skills-problem-tech-lead-perspective', isPermanent: true });
+=======
+  const {createRedirect} = actions 
+  createRedirect({ fromPath: '/exploring-the-skills-problem-tech-lead-perspective', toPath: '/blog/exploring-the-skills-problem-tech-lead-perspective/', isPermanent: true });
+  createRedirect({ fromPath: '/how-to-objectively-assess-your-own-proficiency-level', toPath: '/blog/how-to-objectively-assess-your-own-proficiency-level/', isPermanent: true });
+  createRedirect({ fromPath: '/learning-software-development-is-like-building-a-puzzle', toPath: '/blog/learning-software-development-is-like-building-a-puzzle/', isPermanent: true });
+  createRedirect({ fromPath: '/is-it-possible-to-define-proficiency-levels-for-technical-skills', toPath: '/blog/is-it-possible-to-define-proficiency-levels-for-technical-skills/', isPermanent: true });
+  createRedirect({ fromPath: '/exploring-the-open-standards-for-skills-related-data', toPath: '/blog/exploring-the-open-standards-for-skills-related-data/', isPermanent: true });
+  createRedirect({ fromPath: '/a-domain-model-for-skills-development', toPath: '/blog/a-domain-model-for-skills-development/', isPermanent: true });
+  createRedirect({ fromPath: '/towards-a-skills-framework-for-solution-development', toPath: '/blog/towards-a-skills-framework-for-solution-development/', isPermanent: true });
+  createRedirect({ fromPath: '/defining-the-devskilldojo-purpose', toPath: '/blog/defining-the-devskilldojo-purpose/', isPermanent: true });
+  createRedirect({ fromPath: '/how-to-objectively-assess-your-own-proficiency-level', toPath: '/blog/how-to-objectively-assess-your-own-proficiency-level/', isPermanent: true });
+  createRedirect({ fromPath: '/lets-begin', toPath: '/blog/lets-begin/', isPermanent: true });
+
+>>>>>>> main
 }
