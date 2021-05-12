@@ -103,11 +103,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-<<<<<<< HEAD
-  // Create redirects for old URLs
-  const {createRedirect} = actions 
-  createRedirect({ fromPath: '/exploring-the-skills-problem-tech-lead-perspective', toPath: '/blog/exploring-the-skills-problem-tech-lead-perspective', isPermanent: true });
-=======
   const {createRedirect} = actions 
   createRedirect({ fromPath: '/exploring-the-skills-problem-tech-lead-perspective', toPath: '/blog/exploring-the-skills-problem-tech-lead-perspective/', isPermanent: true });
   createRedirect({ fromPath: '/how-to-objectively-assess-your-own-proficiency-level', toPath: '/blog/how-to-objectively-assess-your-own-proficiency-level/', isPermanent: true });
@@ -120,5 +115,4 @@ exports.createPages = async ({ graphql, actions }) => {
   createRedirect({ fromPath: '/how-to-objectively-assess-your-own-proficiency-level', toPath: '/blog/how-to-objectively-assess-your-own-proficiency-level/', isPermanent: true });
   createRedirect({ fromPath: '/lets-begin', toPath: '/blog/lets-begin/', isPermanent: true });
 
->>>>>>> main
 }
