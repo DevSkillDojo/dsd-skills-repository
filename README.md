@@ -30,6 +30,14 @@ We welcome contributions tio this growing learning repository, so please feel fr
 
     TODO
 
+4. To deploy
+
+    ```shell
+    gatsby build
+    npm run deploy
+
+    ```
+
 
 ## Old Gatsby Content
 
