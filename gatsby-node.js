@@ -62,6 +62,13 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            frontmatter {
+              title
+              description
+              date
+              author
+              image
+            }
             fields {
               slug
               source
@@ -85,6 +92,7 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           id: edge.node.id,
           slug: edge.node.fields.slug,
+          frontmatter: edge.node.frontmatter
         },
       })
     }

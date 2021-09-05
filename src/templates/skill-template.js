@@ -8,7 +8,7 @@ import { Container } from "react-bootstrap"
 const shortcodes = { Link } // Provide list of components that should be made available to MDX files here
 
 const SkillTemplate = props => {
-  console.log("Skill Template props: ", props)
+  //console.log("Skill Template props: ", props)
   return (
     <Layout>
       <Container>

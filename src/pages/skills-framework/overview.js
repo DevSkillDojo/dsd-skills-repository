@@ -7,7 +7,7 @@ import FrameWorkImage from "../../images/DevSkillDojo_Skills_Framework-1.png"
 
 const SkillsFrameworkOverview = () => (
   <Layout>
-    <SEO title="Skills Framework Overview" />
+    <SEO title="Skills Framework Overview" description="Overview of the skills framework used by DevSkillDojo" />
     <Container className="px-5 mb-5"> 
       <h1 className="mt-5 mb-1">Skills Framework</h1>
       <p>Release Date: 2020-03-07</p>

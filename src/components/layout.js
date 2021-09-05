@@ -17,7 +17,7 @@ import "./gatsby-default-layout.css"
 
 const Layout = (props) => {
 
-  console.log("Layout Props: ", props);
+  //console.log("Layout Props: ", props);
 
   const { children, pageInfo } = props;
 

@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import { Row, Col, Container } from "react-bootstrap"
 
 const TermsAndConditionsPage = () => (
-  <Layout pageInfo={{ pageName: "tarms-and-conditions" }}>
+  <Layout pageInfo={{ pageName: "terms-and-conditions" }}>
   <SEO title="Terms and Conditions" />
   <div className="hero-wrapper py-5 bg-dark">
     <div className="hero">

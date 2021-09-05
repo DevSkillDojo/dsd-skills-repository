@@ -1,19 +1,21 @@
 ---
-title: "I use the Zachman Framework to define process levels. Here's why"
+title: "I use the Zachman Framework to define process levels. Here's why (and how)"
 date: "2021-09-07"
 author: "Greg Fullard"
 category: "Process Modelling"
+description: "The levels of abstraction in the Zachman Framework are great for avoiding fuzzy definitions of business process levels."
+image: "card_value_chain.png"
 ---
 
-We often hear people speak about process "levels" using terms like "level 1", "level 2, or "level 5". 
-This implies that that there is some globally agreed standard that specifies the levels of details in a business processes. 
+We often hear people speak about process "levels" using terms like "level 1", "level 2", or "level 5". 
+This implies that there is some globally agreed standard that specifies the levels of details in business processes. 
 This is, unfortunately, not the case.
 
 What we do have, however, is a broad consensus that:
 
-* **Process models can (and should) be arranged in hierarchies**. Where each lower "drill-down" provides details of HOW to do the activity that it links to
+* **Process models can (and should) be arranged in hierarchies** where each lower "drill-down" provides details of HOW to do the activity that it links to
 * **Top-level diagrams represent an "enterprise" or "contextual" view** which provides a general understanding of a process and its relationship to other processes.
-* **Mid-level diagrams represent an "operational" view** which define more granular activities and identify all outcomes, including exceptions and alternative paths.
+* **Mid-level diagrams represent an "operational" view** which defines and identifies more granular activities and outcomes, including exceptions and alternative paths.
 * **Low-level diagrams represent a "system" view** that can be used as a basis for simulation or execution.
 
 ![Photo by Campaign Creators](../../images/campaign-creators-8F4EX4Nw1yY-unsplash-md.jpg "Photo by Campaign Creators on Unsplash")
@@ -30,7 +32,7 @@ The levels are:
 2. **Conceptual level**, typically used to show how the inputs and outputs of different processes link together in a value chain. Generally the audience comprises business management.
 3. **Logical level**, typically used to present the business logic inside processes, in particular event triggers, activity steps, decision steps and process participants. The audience for these models typically comprise subject matter experts in the business as well as architects and analysts. 
 4. **Physical level**, typically a drill-down from the logical level which provides additional detail for the steps that have a significant systems component.
-5. **Implementation level**, which generally comprises the platform-specific configuration code (or diagrams, in low/no-code tools)
+5. **Implementation level**, which generally comprises the platform-specific configuration code (or diagrams, in low/no-code tools).
 6. **Product level**, which represents the running enterprise, i.e. the instantiation of the various models.
 
 These levels work amazingly well for giving structure and rigour to a set of processes and activities. Generally I use them as follows:
@@ -45,29 +47,29 @@ Here, for example, is a value chain for a service-based SME business (like ours)
 
 ![SME Service Business Value Chain](../../images/sme-service-business-value-chain.png "Example Value Chain for an SME Service Business")
 
-It should be obvious that this model is inspired by Michael Porter's value chain concept (https://www.amazon.com/Competitive-Advantage-audiobook/dp/B07Q5JPLXL)
+It should be obvious that this model is inspired by Michael Porter's value chain concept (https://www.amazon.com/Competitive-Advantage-audiobook/dp/B07Q5JPLXL).
 
-Each of the high-level functional areas would then be drilled-down into it's own conceptual-level model.
+Each of the high-level functional areas would then be drilled-down into its own conceptual-level model.
 
 ## For the conceptual level
 At the conceptual level, I use a properly formatted Eriksson-Penker diagram (to be precise: a UML Diagram with Erikkson-Penker extensions).
 The extensions were originally defined in the book by Hans-Erik Eriksson and Magnus Penker (https://www.amazon.com/Business-Modeling-UML-Patterns-Work/dp/0471295515).
 
-Eriksson-Penker diagrams resemble old-school IDEF0 models, but is also similar to models from Jaques Hale's Value Analysis method (https://www.amazon.com/Concepts-Capabilities-Understanding-Exploiting-Competitive/dp/0471957984)
+Eriksson-Penker diagrams resemble old-school IDEF0 models, but is also similar to models from Jaques Hale's Value Analysis method (https://www.amazon.com/Concepts-Capabilities-Understanding-Exploiting-Competitive/dp/0471957984).
 
 Irrespective of the specific notation you choose to employ, the idea is that a conceptual-level process model should not focus on step-by-step procedural logic,
 but it should rather define the inputs and outputs of each process. When assembled together, the outputs from some processes become the inputs to other processes, 
 effectively building a chain of value creation, that ultimately achieves the end-goal of the enterprise.
 
-To keep conceptual models clean, I try to keep fewer that 10 (ideally less than 6) processes on a single diagram. 
-This means that I sometimes create drill-down diagrams of sections that form a cohesive unit. These drill-down diagrams help to break down the model into manageable chunks, but they still belong in the conceptual layer of abraction.
+To keep conceptual models clean, I try to keep fewer than 10 (ideally less than 6) processes on a single diagram. 
+This means that I sometimes create drill-down diagrams of sections that form a cohesive unit. These drill-down diagrams help to break down the model into manageable chunks, but they still belong in the conceptual layer of abstraction.
 
-As an example, here's an extract from a conceptual model for the Marketing & Sales functional area, based on ideas from the 1-Page Marketing Plan (https://www.amazon.com/The-1-Page-Marketing-Plan-audiobook/dp/B01KOQWSNQ)
+As an example, here's an extract from a conceptual model for the Marketing & Sales functional area, based on ideas from the 1-Page Marketing Plan (https://www.amazon.com/The-1-Page-Marketing-Plan-audiobook/dp/B01KOQWSNQ).
 
 ![1PMP High Level Model Extract](../../images/conceptual-extract.png "Extract from Conceptual-Level process model")
 
-## For the Logical Level
-At the logical level I use BPMN2 notation, which contains all nitty-gritty details of the processes. This includes various aspects that 
+## For the logical level
+At the logical level I use BPMN notation, which contains all the nitty-gritty details of the processes. This includes various aspects that 
 help to define the business logic that forms part of the process. Details generally include:
 * Events that trigger the process
 * Human and automated activities that are performed
@@ -81,13 +83,13 @@ And also, in a manner similar to the conceptual level, I sometimes create drill-
 
 There is a gazillion examples of BPMN diagrams available online, this [Creately Article](https://creately.com/blog/examples/bpmn-templates-model-processes/) contains some good examples.
 
-## For the Physical Level
+## For the physical level
 At the physical level, I use UML Activity Diagrams. The intention here would be to model the detailed implementation logic that a developer would need
 to understand while building the relevant component.
 
-## For the Implementation level
-The implementation level is alwasy platform-dependent. It may include source code (for a custom dev project), or perhaps a Domain-Specific-Language (like what is used in Robocorp), or perhaps some visual 
-modelling approach(like what is used in many of the RPA tools).
+## For the implementation level
+The implementation level is always platform-dependent. It may include source code (for a custom dev project), or perhaps a Domain-Specific-Language (like that used in Robocorp), or perhaps some visual 
+modelling approach (such as those used in many RPA tools).
 
 ## Conclusion
 

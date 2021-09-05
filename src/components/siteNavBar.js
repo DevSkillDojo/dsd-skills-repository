@@ -4,7 +4,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-boots
 
 const SiteNavbar = (props) => {
   const { pageInfo, siteTitle } = props;
-  console.log("Navbar props: ",props);
+  //console.log("Navbar props: ",props);
   return (
     <>
       <Navbar sticky="top" variant="dark" expand="lg" className="bg-dark">

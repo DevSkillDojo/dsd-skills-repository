@@ -51,7 +51,7 @@ const Blog = () => {
 
   return (
     <Layout pageInfo={{ pageName: "blog" }}>
-      <SEO title="Blog" />
+      <SEO title="Blog" description="Exploring the skills needed for successful solution development"  />
       <div className="hero-wrapper py-5 bg-dark">
         <div className="hero">
           <h1 className="hero-header display-2 mb-5">DevSkillDojo Blog</h1>

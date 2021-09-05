@@ -7,7 +7,7 @@ import DomainModelImage from "../../images/DevSkillDojo_Domain_Model.png"
 
 const SkillsDomainModel = () => (
   <Layout>
-    <SEO title="Skills Domain Model" />
+    <SEO title="Skills Domain Model" description="A domain model for structuring data about skills" />
     <Container className="px-5 mb-5"> 
       <h1 className="mt-5 mb-1">Skills Domain Model</h1>
       <p>Release Date: 2020-04-10</p>

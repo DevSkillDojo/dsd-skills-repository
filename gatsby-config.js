@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `DevSkillDojo`,
-    description: `TODO`,
+    description: `Helping passionate people build world-class technical teams`,
     author: `@devskilldojo`,
     showNotificationBanner: false,
+    defaultCardImage: 'TwitterCard1.png'
   },
   plugins: [
     `gatsby-plugin-sass`,

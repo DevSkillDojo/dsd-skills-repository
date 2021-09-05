@@ -3,7 +3,7 @@ import React from "react"
 import { Row, Col } from "react-bootstrap"
 
 const NotificationBanner = props => {
-  console.log("Show notification banner props: ", props)
+  // console.log("Show notification banner props: ", props)
   const { showNotificationBanner } = props
 
   return (

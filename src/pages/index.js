@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout pageInfo={{ pageName: "index" }}>
-    <SEO title="Home" />
+    <SEO title="Home" description="Helping passionate people build world-class technical teams" />
     <Container fluid className="px-0">
     <div className="welcome-header">
       <div className="welcome-text">

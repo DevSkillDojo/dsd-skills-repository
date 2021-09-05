@@ -6,7 +6,7 @@ import { Row, Col, Container } from "react-bootstrap"
 
 const CreditsPage = () => (
   <Layout pageInfo={{ pageName: "credits" }}>
-  <SEO title="Credits" />
+  <SEO title="Credits" description="Giving credit where credit is due" />
   <div className="hero-wrapper py-5 bg-dark">
     <div className="hero">
       <h1 className="hero-header display-2 mb-5">Credits</h1>

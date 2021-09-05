@@ -7,6 +7,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 // import Img from "gatsby-image"
 import SubscribeWidget from "../components/subscribeWidget"
 import { Container, Alert } from "react-bootstrap"
+import SEO from "../components/seo"
 
 const shortcodes = { Link } // Provide list of components that should be made available to MDX files here
 
@@ -18,9 +19,11 @@ const PostTemplate = props => {
     setShowSubscribeSuccess(result);
   }
 
-  console.log("Blog Post Template props: ", props)
+  //console.log("Blog Post Template props: ", props)
+  console.log("Blog Post FrontMatter: ", props.pageContext.frontmatter)
   return (
     <Layout>
+      <SEO title={props.pageContext.frontmatter.title} description={props.pageContext.frontmatter.description} image={props.pageContext.frontmatter.image} />
       <div className="hero-wrapper py-5 bg-dark">
         <div className="hero">
           <h1 className="hero-header display-2 mb-5">DevSkillDojo Blog</h1>
